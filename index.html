@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkTree - Rehan Dias Pratama</title>
+    <link rel="icon" href="assets/img/title-icon.png" type="image/png" />
+    <style>
+      /*   Pengaturan Dasar dan Reset */
+      /* Mengatur kotak model untuk semua elemen */
+      * {
+        box-sizing: border-box;
+      }
+      /* Mereset beberapa properti dasar untuk elemen-elemen HTML */
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      button,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+
+      /* Mereset properti tampilan untuk elemen HTML5 */
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      menu,
+      nav,
+      section {
+        display: block;
+      }
+
+      /* Mereset tinggi baris untuk elemen body */
+      body {
+        line-height: 1;
+      }
+
+      /* Mereset style daftar untuk daftar terurut dan tidak terurut */
+      ol,
+      ul {
+        list-style: none;
+      }
+
+      /* Mereset kutipan dalam elemen blockquote dan q */
+      blockquote,
+      q {
+        quotes: none;
+      }
+
+      /* Mereset konten sebelum dan setelah elemen blockquote dan q */
+      blockquote:before,
+      blockquote:after,
+      q:before,
+      q:after {
+        content: "";
+        content: none;
+      }
+
+      /* Mereset properti tabel */
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+      /*    Pengaturan Desain Tampilan  */
+
+      /* Dari elemen :root, mengatur variabel desain */
+      :root {
+        /* Keluarga font dalam desain secara keseluruhan */
+        --font_family: "Inter", sans-serif;
+
+        /* Ukuran font, proporsional untuk semua teks */
+        --font_size: 16px;
+
+        /* Warna latar, latar gambar aktif jika ada */
+        --background_color: #000;
+        --background_image: url("./assets/img/wallpaper.png");
+
+        /* Tebal bingkai gambar dan warnanya */
+        --image_border_color: #1f232e;
+        --image_border_px: 3px;
+
+        /* Lebar dan ukuran gambar */
+        --image_width: 140px;
+        --image_height: 140px;
+
+        /* Warna judul dan deskripsi */
+        --title_color: #fff;
+        --description_color: #fff;
+
+        /* Warna latar, warna teks, dan warna aktif menu */
+        --menu_background_color: #1d1e24;
+        --menu_text_color: #fff;
+        --menu_active_text_color: #d7e04f;
+
+        /* Warna latar, warna teks, dan warna aktif tombol */
+        --button_background_color: #1d1e24;
+        --button_text_color: #fff;
+        --button_text_hover_color: #d7e04f;
+
+        /* Warna latar, warna teks, dan warna aktif kolom teks */
+        --textarea_background_color: #1d1e24;
+        --textarea_text_color: #fff;
+        --textarea_link_text_color: #d7e04f;
+
+        /* Warna latar, warna teks, dan warna aktif area footer */
+        --footer_background_color: #1d1e24;
+        --footer_text_color: #fff;
+        --footer_link_text_color: #d7e04f;
+      }
+
+      /*    code Dasar   */
+
+      /* Pengaturan dasar halaman */
+      body {
+        font: var(--font_size) var(--font_family);
+        font-weight: 400;
+        line-height: 1.5;
+        background: var(--background_color) var(--background_image) no-repeat
+          center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      /* Pengaturan tampilan konten dengan fleksibilitas */
+      .flex_column_center {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Pengaturan tampilan konten dengan fleksibilitas */
+      .flex_row_center {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Pengaturan tampilan konten dengan fleksibilitas */
+      .flex_no_wrap_row_center {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* code Logo, Judul, dan Deskripsi */
+
+      /* style untuk elemen gambar header */
+      .header_img {
+        padding-top: 1em;
+      }
+
+      /* style untuk gambar dalam header */
+      .header_img img {
+        height: var(--image_height);
+        width: var(--image_width);
+        border: var(--image_border_px) solid var(--image_border_color);
+        border-radius: 50%;
+        margin-bottom: 0.5em;
+      }
+
+      /* style untuk judul header */
+      .header_text h1 {
+        color: var(--title_color);
+        font-size: 2em;
+      }
+
+      /* style untuk deskripsi header */
+      .header_text h2 {
+        color: var(--description_color);
+        font-size: 1.5em;
+      }
+
+      /*   code Menu  */
+
+      /* style untuk menu header - item aktif */
+      #header_nav_menu_item_1 {
+        color: var(--menu_active_text_color);
+      }
+
+      /* style untuk menu header - item non-aktif */
+      #header_nav_menu_item_2,
+      #header_nav_menu_item_3 {
+        color: var(--menu_text_color);
+      }
+
+      /* style untuk daftar menu header */
+      .header_nav_menu_list {
+        padding-top: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      /* style untuk setiap item menu header */
+      .header_nav_menu_item {
+        color: var(--menu_text_color);
+        background-color: var(--menu_background_color);
+        text-align: center;
+        list-style-type: none;
+        cursor: pointer;
+        padding: 0.5em;
+        border-radius: 0.3em;
+        cursor: pointer;
+        transition: 0.1s ease;
+        font-size: 1.1em;
+      }
+
+      /* style untuk item menu header dengan jarak antara item */
+      .header_nav_menu_item + .header_nav_menu_item {
+        margin-left: 0.4em;
+      }
+
+      /*   code Kontainer Menu */
+
+      /* style untuk kontainer utama */
+      main {
+        margin-bottom: auto;
+      }
+
+      /* style untuk kontainer menu tambahan yang tidak ditampilkan */
+      #main_section_container_2,
+      #main_section_container_3 {
+        display: none;
+      }
+
+      /* style untuk tautan menu utama */
+      .main_a_item {
+        margin-top: 1em;
+        text-decoration: none;
+      }
+
+      /* style untuk tombol utama dalam menu */
+      .main_button_item {
+        color: var(--button_text_color);
+        background-color: var(--button_background_color);
+        width: 41em;
+        border-radius: 1em;
+        min-height: 3.7em;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      /* style untuk daftar tombol kecil dalam menu */
+      .main_small_button_list {
+        display: flex;
+        flex-direction: row;
+      }
+
+      /* style untuk tautan kecil dalam menu */
+      .main_small_a_item {
+        margin-top: 1em;
+        text-decoration: none;
+      }
+
+      /* style untuk tombol kecil dan tombol utama saat digerakkan mouse */
+      .main_small_button_item:hover,
+      .main_button_item:hover {
+        color: var(--button_text_hover_color);
+        transform: scale(1.02);
+        transition: 0.1s ease;
+      }
+
+      /* style untuk tombol kecil dalam menu */
+      .main_small_button_item {
+        color: var(--button_text_color);
+        background-color: var(--button_background_color);
+        width: calc(41em / 2 - 5px);
+        border-radius: 1em;
+        min-height: 3.7em;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      /*    code Footer  */
+
+      /* style untuk item dalam footer */
+      .footer_div_item {
+        color: var(--footer_text_color);
+        background: var(--footer_background_color);
+        padding: 1em;
+        margin-top: 1.5em;
+      }
+
+      /* style untuk tautan dalam footer */
+      .footer_a_item {
+        color: var(--footer_link_text_color);
+        text-decoration: none;
+      }
+
+      /*    code Responsif   */
+
+      /* Responsif - style untuk tombol kecil dalam menu saat layar berukuran kecil */
+      @media (max-width: 768px) {
+        .main_small_button_item {
+          width: calc(92vw / 2 - 5px);
+        }
+        .main_button_item {
+          width: 92vw;
+        }
+        .header_h_item {
+          width: 92vw;
+          text-align: center;
+        }
+      }
+
+      /* style untuk judul header saat layar berukuran kecil */
+      .header_text h1.header_h_item {
+        font-size: 20px;
+      }
+
+      /* style untuk deskripsi header saat layar berukuran kecil */
+      .header_text h2.header_h_item {
+        font-size: 15px;
+        text-align: center;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        white-space: pre-line;
+        display: inline;
+      }
+
+      /*   code CSS Berakhir Di Sini  */
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Bagian Logo dan Judul -->
+      <div class="header_img flex_column_center">
+        <img src="/assets/img/logo.png" alt="Logo" />
+      </div>
+      <div class="header_text flex_column_center">
+        <h1 class="header_h_item">My LinkTree</h1>
+        <h2 class="header_h_item">👋Halo! Saya Rehan Dias Pratama!👨‍💻</h2>
+      </div>
+    </header>
+    <main>
+      <!-- Container Menu 1 -->
+      <section id="main_section_container_1" class="flex_column_center">
+        <!-- Tombol Biodata -->
+        <a class="main_a_item" href="./page/biodata.html" rel="nofollow">
+          <button class="main_button_item">Biodata</button>
+        </a>
+        <!-- Tombol Portofolio -->
+        <a class="main_a_item" href="./page/portofolio.html" rel="nofollow">
+          <button class="main_button_item">Portofolio</button>
+        </a>
+
+        <!-- Tombol CCNA Certification -->
+        <a
+          class="main_a_item"
+          href="https://drive.google.com/drive/folders/1ckiNoFOnhgiqERIQn1pJn_dC4cCyrJbJ?usp=share_link"
+          target="_blank"
+          rel="nofollow"
+        >
+          <button class="main_button_item">CCNA Certification</button>
+        </a>
+        <!-- Tombol Latihan Excel & MYOB -->
+        <a
+          class="main_a_item"
+          href="https://drive.google.com/drive/folders/1NeX45AP6PTfw-DfBRjLu1k0l9cpwBf_t?usp=share_link"
+          target="_blank"
+          rel="nofollow"
+        >
+          <button class="main_button_item">Latihan Excel & MYOB</button>
+        </a>
+        <!-- Tambahkan tombol lebih jika diperlukan -->
+      </section>
+      <!-- Akhir Container Menu 1 -->
+    </main>
+    <footer>
+      <!-- Footer -->
+      <div class="footer_div_item flex_row_center">
+        <a class="footer_a_item" href="#link">Rehan Dias Pratama</a>&nbsp;|
+        Copyright
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
+  </body>
+</html>

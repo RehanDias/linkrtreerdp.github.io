@@ -1,0 +1,355 @@
+/* Mengatur margin dan padding default untuk elemen-elemen dasar */
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Mengatur font family dan latar belakang untuk elemen 'body' */
+body {
+  font-family: "Inter", sans-serif;
+  background-image: url(../img/wallpaper.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #fff;
+  text-align: center;
+}
+
+/* Mengatur tampilan header */
+header {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Mengatur tampilan isi header */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mengatur tampilan logo bulat */
+.round-logo {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+/* Mengatur tampilan judul h1 di header */
+header h1 {
+  font-size: 36px;
+  color: #fff;
+}
+
+/* Mengatur tampilan paragraf di header */
+header p {
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+}
+
+/* Mengatur tampilan elemen 'section' */
+section {
+  background-color: rgba(29, 30, 36, 1);
+  color: #fff;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mengatur tampilan container untuk elemen-elemen dengan class 'interests-container' */
+.interests-container {
+  display: flex;
+  justify-content: space between;
+  align-items: center;
+  max-width: 600px 500px; /* Catatan: Sepertinya terdapat kesalahan penulisan disini, sebaiknya diganti dengan 'max-width: 600px;' */
+}
+
+/* Mengatur lebar kolom dalam 'interests-container' */
+.column {
+  width: calc(70% - 5px);
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+/* Mengatur lebar kolom dalam 'interests-container' pada layar besar (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .column {
+    width: calc(160% - 3px);
+    padding: 6px;
+  }
+}
+
+/* Mengatur tampilan judul h3 dalam container dengan class 'content-section' di dalam 'interests-container' */
+.interests-container .content-section h3 {
+  font-size: 20px;
+  margin-bottom: auto;
+}
+
+/* Mengatur tampilan beberapa elemen berdasarkan ID */
+#introduction p,
+#study ul,
+#study p,
+#experience h3,
+#experience p,
+#education ul {
+  text-align: left;
+}
+
+/* Mengatur tampilan judul h2 dalam elemen dengan ID 'experience' dan 'education' */
+#experience h2,
+#education h2 {
+  margin-bottom: 5px;
+}
+
+/* Mengatur margin atas untuk elemen dengan ID 'experience' dan 'education' */
+#experience p,
+#education ul {
+  margin-top: 5px;
+}
+
+/* Mengatur tampilan judul h2 */
+h2 {
+  font-size: 24px;
+}
+
+/* Mengatur tampilan judul h3 */
+h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Mengatur tampilan daftar tak terurut */
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* Mengatur tampilan footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(29, 30, 36, 1);
+  color: #fff;
+  padding: 10px 0;
+  margin: auto;
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Mengatur tampilan container portofolio */
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mengatur tampilan item portofolio */
+.portfolio-item {
+  background-color: rgba(29, 30, 36, 1);
+  color: #fff;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+/* Mengatur tampilan gambar portofolio */
+.portfolio-image {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Mengatur tampilan gambar di dalam elemen dengan class 'portfolio-image' */
+.portfolio-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mengatur tampilan informasi portofolio */
+.portfolio-info {
+  flex: 3;
+  padding: 10px;
+}
+
+/* Mengatur tampilan judul h3 di dalam elemen dengan class 'portfolio-info' */
+.portfolio-info h3 {
+  font-size: 24px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Mengatur tampilan paragraf di dalam elemen dengan class 'portfolio-info' */
+.portfolio-info p {
+  font-size: 15px;
+  margin: 0;
+  text-align: left;
+}
+
+/* Mengatur tampilan tombol 'back-button' */
+.back-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #181a1d;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 999;
+}
+
+/* Mengatur tampilan 'back-button' saat dihover */
+.back-button:hover {
+  background-color: #515558;
+}
+
+/* Mengatur tampilan tombol 'view-button' */
+a.view-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+/* Mengatur tampilan 'view-button' saat dihover */
+a.view-button:hover {
+  background-color: #0056b3;
+}
+
+/* Mengatur tampilan elemen-elemen pada layar kecil (max-width: content) */
+@media (max-width: content) {
+  /* Mengatur padding header pada layar kecil */
+  header {
+    padding: 10px;
+  }
+
+  /* Mengatur tampilan judul h1 pada layar kecil */
+  header h1 {
+    font-size: 20px;
+  }
+
+  /* Mengatur tampilan paragraf pada layar kecil */
+  header p {
+    font-size: 14px;
+  }
+
+  /* Mengatur tampilan elemen 'section' pada layar kecil */
+  section {
+    padding: 10px;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Mengatur tampilan footer pada layar kecil */
+  footer {
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  /* Mengatur latar belakang body pada layar kecil */
+  body {
+    background-size: 200% 200%;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+/* Mengatur tampilan elemen-elemen pada layar berukuran maksimal 768px */
+@media (max-width: 768px) {
+  /* Mengatur tampilan judul h3 di dalam 'interests-container' */
+  .interests-container .content-section h3 {
+    font-size: 18px;
+  }
+
+  /* Mengatur tampilan gambar dalam 'portfolio-item' */
+  .portfolio-item .portfolio-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Mengatur tampilan judul h3 di dalam 'portfolio-info' */
+  .portfolio-item .portfolio-info h3 {
+    font-size: 20px;
+  }
+
+  /* Mengatur tampilan paragraf di dalam 'portfolio-info' */
+  .portfolio-item .portfolio-info p {
+    font-size: 13px;
+    text-align: left;
+  }
+
+  /* Mengatur tampilan elemen 'name-title' */
+  .name-title {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  /* Mengatur tampilan judul 'name' */
+  .name {
+    font-size: 24px;
+  }
+
+  /* Mengatur tampilan judul 'title' */
+  .title {
+    font-size: 18px;
+  }
+
+  /* Mengatur tampilan tombol 'back-button' pada layar kecil */
+  .back-button {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    background-color: #181a1d;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 999;
+  }
+
+  /* Mengatur tampilan 'back-button' saat dihover pada layar kecil */
+  .back-button:hover {
+    background-color: #515558;
+  }
+}
